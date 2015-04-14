@@ -14,9 +14,9 @@ class StudentsController < ApplicationController
   end
 
   def create
-  house = House.all.sample.id
+  @house = House.all.sample.id
   @student = Student.new( student_params )
-  @student.house_id = house
+  @student.house_id = @house
   if @student.save
     redirect_to @student
   else
