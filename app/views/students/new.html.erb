@@ -2,11 +2,9 @@
 <%= image_tag "http://flavorwire.files.wordpress.com/2009/06/sorting-hat.jpg" %>
 
 <% if @student.errors.any? %>
-	<ul>
 	<% @student.errors.full_messages.each do |err| %>
-			<li><%= err %></li>
+			<p><%= err %></p>
 		<% end %>
-	</ul>
 <% end %>
 
 <%= form_for [@student] do |f| %>
